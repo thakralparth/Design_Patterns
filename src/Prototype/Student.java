@@ -41,16 +41,42 @@ public class Student implements Prototype<Student>{
         this.avgBatchPsp = avgBatchPsp;
     }
 
+    public Student(){
+
+    }
+
+    public Student(Student originalStudent){
+//        Student copy = new Student();
+        this.name = originalStudent.name;
+        this.age = originalStudent.age;
+        this.psp = originalStudent.psp;
+        this.email = originalStudent.email;
+        this.batch = originalStudent.batch;
+        this.avgBatchPsp = originalStudent.avgBatchPsp;
+//        return copy;
+    }
+
+
+
     @Override
     public Student clone() {
-        Student copy = new Student();
-        copy.name = this.name;
-        copy.age = this.age;
-        copy.psp = this.psp;
-        copy.email = this.email;
-        copy.batch = this.batch;
-        copy.avgBatchPsp = this.avgBatchPsp;
-        return copy;
+        return new Student(this);
     }
+
+
+//    @Override
+//    public Student clone() {
+//        Student copy = new Student();
+//        copy.name = this.name;
+//        copy.age = this.age;
+//        copy.psp = this.psp;
+//        copy.email = this.email;
+//        copy.batch = this.batch;
+//        copy.avgBatchPsp = this.avgBatchPsp;
+//        return copy;
+//    }
+
+
+
 }
 

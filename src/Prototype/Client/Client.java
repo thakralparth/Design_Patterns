@@ -1,10 +1,12 @@
 package Prototype.Client;
 
+import Prototype.IntelligentStudent;
 import Prototype.Student;
 import Prototype.StudentRegistry;
 
 public class Client {
     public static final String APR_22 = "APR_22";
+    public static final String INTELLIGENT_APR_22 = "INTELLIGENT_APR_22";
 
     public static void main(String[] args) {
         StudentRegistry registry = new StudentRegistry();
@@ -16,6 +18,16 @@ public class Client {
         roshan.setEmail("abc@xyz.com");
         roshan.setName("Roshan");
         roshan.setPsp(95.23);
+//        System.out.println("DEBUG");
+
+        Student intelligentVikramStudent = registry.get(INTELLIGENT_APR_22).clone();
+        // datatype is student in above line bcz registry returns Student only
+        intelligentVikramStudent.setPsp(75);
+        intelligentVikramStudent.setName("Vikram");
+        intelligentVikramStudent.setEmail("text@xyz.com");
+
+//        intelligentVikramStudent.setiq(120);
+        // as datatype is student this won't work
         System.out.println("DEBUG");
     }
 
@@ -26,6 +38,13 @@ public class Client {
         apr22.setAvgBatchPsp(89.88);
 
         registry.register(APR_22,apr22);
+
+        IntelligentStudent intelligentapr22Student = new IntelligentStudent();
+        intelligentapr22Student.setBatch("Apr 22");
+        intelligentapr22Student.setAvgBatchPsp(89.88);
+
+
+        registry.register(INTELLIGENT_APR_22,intelligentapr22Student);
 
 
     }
