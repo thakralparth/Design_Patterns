@@ -28,6 +28,13 @@ public class Client {
 
 //        intelligentVikramStudent.setiq(120);
         // as datatype is student this won't work
+
+
+//        Sol: type casting
+//        IntelligentStudent intelligentStudent = (IntelligentStudent) intelligentVikramStudent;
+//        intelligentStudent.setIq(120);
+
+
         System.out.println("DEBUG");
     }
 
